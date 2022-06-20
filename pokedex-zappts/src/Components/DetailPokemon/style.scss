@@ -1,0 +1,168 @@
+@import '../../App.scss';
+
+section.detail-pokemon {
+    background-color: rgba($white-color, 50%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+
+    div.container {
+        .close {
+            text-align: right;
+            padding: 16px 0;
+
+            .close-detail {
+                background-image: url('../../Images/icons/closeIcon.png');
+                background-color: rgba(#000, 1%);
+                cursor: pointer;
+                font-size: 0;
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .content-detail {
+            background-color: $white-color;
+            box-shadow: 0 2px 8px rgba($black-color, 80%);
+            display: flex;
+            border-radius: 16px;
+
+            .image-side {
+                box-shadow: none;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                min-height: 350px;
+                min-width: 350px;
+                justify-content: center;
+                border-radius: 16px 0 0 16px;
+
+                img {
+                    height: 100%;
+                }
+
+                .types {
+                    align-items: flex-end;
+                    align-self: flex-end;
+                    display: flex;
+
+                    li {
+                        background-color: rgba($white-color, 90%);
+                        box-shadow: 0 2px 8px rgba($black-color, 50%);
+                        border-radius: 16px;
+                        padding: 6px 16px;
+                        margin-left: 16px;
+                        width: max-content;
+
+                        p {
+                            color: rgba($black-color, 90%);
+                            font-weight: $weight-semi-bold;
+                        }
+                    }
+                }
+            }
+
+            .detail-side {
+                min-height: 350px;
+                min-width: 350px;
+                padding: 24px;
+
+                &>header {
+                    display: flex;
+                    justify-content: space-between;
+                    h3 {
+                        text-transform: capitalize;
+                        font-weight: $weight-semi-bold;
+                        font-size: $h4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.show {
+    display: flex !important;
+}
+
+@mixin cardDetail($primary-color, $secondary-color) {
+    background-image: linear-gradient(to right top, $primary-color, $secondary-color);
+
+}
+
+.grass {
+    @include cardDetail(#46A487, #46D7AB);
+}
+
+.water {
+    @include cardDetail(#4676A4, #46C5D7);
+}
+
+.fire {
+    @include cardDetail(#FB6C6C, #f18d8d);
+}
+
+.bug {
+    @include cardDetail(#87B347, #a5ca6d);
+}
+
+.normal {
+    @include cardDetail(#f89db4, #f5bcca);
+}
+
+.poison {
+    @include cardDetail(#731e7b, #8a548f);
+}
+
+.electric {
+    @include cardDetail(#afaf00, #f5f500);
+}
+
+.ground {
+    @include cardDetail(#87B347, #97ac78);
+}
+
+.fairy {
+    @include cardDetail(#ff3e81, #f78db2);
+}
+
+.psychic {
+    @include cardDetail(#CE8083, #ceb0b1);
+}
+
+.ghost {
+    @include cardDetail(#888888, #b1adad);
+}
+
+.rock {
+    @include cardDetail(#5d6162, #a9adad);
+}
+
+.fighting {
+    @include cardDetail(#c6ac01, #d6c765);
+}
+
+.ice {
+    @include cardDetail(#4676A4, #46C5D7);
+}
+
+.dragon {
+    @include cardDetail(#c42323, #f18d8d);
+}
+
+.dark {
+    @include cardDetail(#424444, #a9adad);
+}
+
+.steel {
+    @include cardDetail(#7c5858, #c0a2a2);
+}
+
+.flying {
+    @include cardDetail(#2b82d3, #43d7eb);
+}
