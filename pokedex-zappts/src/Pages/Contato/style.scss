@@ -1,0 +1,10 @@
+@import '../../App.scss';
+
+.contato {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - $header-height);
+    justify-content: center;
+    margin-top: $header-height;
+}
+
