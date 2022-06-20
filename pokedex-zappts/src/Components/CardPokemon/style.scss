@@ -1,0 +1,116 @@
+@import '../../App.scss';
+
+.card-pokemon {
+    position: relative;
+
+    &>h3 {
+        color: $white-color;
+        font-size: $text;
+        margin: 0 8px;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    &>ul li {
+        background-color: rgba($white-color, 40%);
+        border-radius: 16px;
+        margin-bottom: 8px;
+        margin-left: 8px;
+        padding: 6px 16px;
+        width: max-content;
+
+        p {
+            color: $white-color;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    &>img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@mixin card($primary-color, $secondary-color) {
+    background-image: linear-gradient(to right top, $primary-color, $secondary-color);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba($black-color, 40%);
+    display: inline-block;
+    height: 140px;
+    padding: 16px;
+    width: 200px;
+}
+
+.grass {
+    @include card(#46A487, #46D7AB);
+}
+
+.water {
+    @include card(#4676A4, #46C5D7);
+}
+
+.fire {
+    @include card(#FB6C6C,#f18d8d);
+}
+
+.bug {
+    @include card(#87B347, #a5ca6d);
+}
+
+.normal {
+    @include card(#f89db4, #f5bcca);
+}
+
+.poison {
+    @include card(#731e7b, #8a548f);
+}
+
+.electric {
+    @include card(#afaf00, #f5f500);
+}
+
+.ground {
+    @include card(#87B347, #97ac78);
+}
+
+.fairy {
+    @include card(#ff3e81, #f78db2);
+}
+
+.psychic {
+    @include card(#CE8083, #ceb0b1);
+}
+
+.ghost {
+    @include card(#888888, #b1adad);
+}
+
+.rock {
+    @include card(#5d6162, #a9adad);
+}
+
+.fighting {
+    @include card(#c6ac01, #d6c765);
+}
+
+.ice {
+    @include card(#4676A4, #46C5D7);
+}
+
+.dragon {
+    @include card(#c42323,#f18d8d);
+}
+
+.dark {
+    @include card(#424444, #a9adad);
+}
+
+.steel {
+    @include card(#7c5858, #c0a2a2);
+}
+
+.flying {
+    @include card(#2b82d3, #43d7eb);
+}
