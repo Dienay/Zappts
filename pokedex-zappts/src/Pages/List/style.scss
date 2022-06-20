@@ -1,0 +1,14 @@
+@import '../../App.scss';
+
+section.list-page {
+    height: calc(100vh - $header-height);
+    margin-top: $header-height;
+    padding-top: 32px;
+    transition: margin-top .3s ease-in-out;
+}
+
+@media (max-width: 700px) {
+    section.list-page {
+        margin-top: $header-height-mobile;
+    }
+}
