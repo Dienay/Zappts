@@ -1,0 +1,71 @@
+@import '../../App.scss';
+
+.main {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: $header-height;
+    height: calc(100vh - $header-height);
+
+    &>div {
+        padding: 10%;
+        width: 50%;
+
+        &>h1 {
+            font-size: $h2;
+            font-weight: $weight-bold;
+            margin-bottom: 32px;
+        }
+
+        &>p {
+            margin-bottom: 32px;
+
+        }
+    }
+
+    picture {
+        text-align: right;
+        width: 50%;
+
+        >img {
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main  {
+        position: relative;
+
+        &>div {
+            align-items: center;
+            background-color: rgba($white-color, 75%);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+
+            &>h1 {
+                text-align: center;
+            }
+
+            &>p {
+                text-align: center;
+                margin-bottom: 56px;
+
+            }
+        }
+
+        picture {
+            position: absolute;
+            width: 100%;
+
+            >img {
+                width: 90%;
+            }
+        }
+    }
+}
