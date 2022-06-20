@@ -10,3 +10,37 @@
   text-decoration: none;
   font-family: 'Inter', sans-serif;
 }
+
+// colors
+$white-color: #ffffff;
+$black-color: #000;
+$text-color: rgba($black-color,80%);
+$text-color-light: #9c9c9c;
+$background-header: $white-color;
+$button-color: #48D0B0;
+
+// font-size
+$h1: 3.25em; //52px
+$h2: 2.5em; //40px
+$h3: 2em; //32px
+$h4: 1.625em; //26px
+$text-big: 1.25em; //20px
+$text-medium: 1.125em; //18px
+$text: 1em; //16px
+$text-small: 0.875em; //14px
+$label: 0.75em; //12px
+$label-small: 0.625em; //10px
+
+// font-weight
+$weight-Light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+
+// sizes
+$header-height: 72px;
+$header-height-mobile: 64px;
+$logo-normal-height-size: 56px;
+$logo-small-height-size: 40px;
+$width-default: 1200px;
