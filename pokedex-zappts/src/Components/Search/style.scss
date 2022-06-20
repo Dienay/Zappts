@@ -1,0 +1,18 @@
+@import '../../App.scss';
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+
+    input {
+        border: 1px solid rgba($black-color, 40%);
+        border-radius: 18px;
+        color: $text-color;
+        font-size: $text-medium;
+        font-weight: $weight-Light;
+        padding: 8px 24px;
+        width: 40%;
+    }
+}
