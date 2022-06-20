@@ -1,0 +1,131 @@
+@import '../../App.scss';
+
+.header {
+    background-color: $white-color;
+    box-shadow: 0 4px 16px rgba($black-color, 20%);
+    height: $header-height;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height .3s ease-in-out;
+    width: 100%;
+    z-index: 2;
+
+    &>div {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: $header-height;
+        transition: height .3s ease-in-out;
+        margin: 0 auto;
+        position: relative;
+
+        .menu {
+            display: none;
+        }
+
+        .logo {
+            height: $logo-normal-height-size;
+        }
+
+        &>nav.navbar-header ul.navbar {
+            display: flex;
+            align-items: center;
+
+            &>li.navbar-item {
+
+                &>a {
+                    padding: 0 25px;
+                    position: relative;
+                    color: rgba($black-color, 90%);
+                    font-size: $text-medium;
+                    font-weight: $weight-medium;
+
+                    &::before {
+                        content: "";
+                        width: 0;
+                        height: 1px;
+                        display: block;
+                        background-color: rgba($black-color, 50%);
+                        position: absolute;
+                        bottom: -5px;
+                        left: 15px;
+                        transition: all .3s ease-in-out;
+                    }
+
+                    &:hover::before {
+                        width: calc(100% - 30px);
+                      }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        height: $header-height-mobile;
+
+        &>div {
+            height: $header-height-mobile;
+
+            .menu {
+                display: flex;
+                height: 20px;
+
+                button.menu-dropdown {
+                    cursor: pointer;
+                    font-size: 0;
+                    background-image: url('../../Images/icons/menu-icon.png');
+                    background-color: $white-color;
+                    background-size: cover;
+                    width: 38px;
+                    height: 20px;
+                    border: none;
+                }
+            }
+
+            .logo {
+                height: $logo-small-height-size;
+                margin: 0 auto;
+            }
+
+            &>nav.navbar-header ul.navbar {
+              display: none;
+              height: 0;
+              transition: height .3s ease-in-out;
+            }
+        }
+    }
+}
+
+
+.open-dropdown {
+    height: 190px;
+    transition: height .3s ease-in-out;
+    overflow: hidden;
+
+    &>div {
+        nav.navbar-header ul.navbar {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            transition: height .3s ease-in-out;
+
+            &>li.navbar-item {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba($black-color, 10%);
+
+                &>a {
+                  width: 100%;
+                  display: inline-block;
+                }
+              }
+        }
+    }
+}
