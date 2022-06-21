@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './style.scss';
 import Logo from '../../Images/logo.png';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     const [dropdown, serDropdown] = useState("")
-    const header = document.querySelector('header.main-header')
-
+    // Lida com abertura e fechamento do dropdown do componente Header
+    // Estele elemento só é visivel em telas menores(Dispositivos móveis)
     const handleDropdown = () => {
         if (dropdown) {
             serDropdown("")
@@ -16,6 +16,7 @@ function Header() {
         }
     }
 
+    // Auxilia no fechamento do dropdown ao redimencionar o navegador
     window.addEventListener('resize', function (event) {
         if (window.matchMedia("(min-width: 700px)").matches && dropdown === "open-dropdown") {
             serDropdown("")
