@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-function Search({value, onChange, search}) {
+function Search({value, onChange}) {
     const handleChange = (event) => {
         onChange(event.target.value);
     }
