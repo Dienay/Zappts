@@ -9,7 +9,7 @@ function Search({value, onChange, search}) {
 
   return (
       <section className="search">
-          <input type="search" value={value} onChange={handleChange} />
+          <input type="search" value={value} onChange={handleChange} placeholder="Pesquisar pokemon"/>
       </section>
   );
 }
