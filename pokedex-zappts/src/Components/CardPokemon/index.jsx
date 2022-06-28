@@ -39,7 +39,7 @@ function CardPokemon({pokeName}) {
           return <li key={types.type.name} ><p>{types.type.name}</p></li>;
         })}
       </ul>
-      <img src={ imagePokemon } alt="" />
+      <img src={ imagePokemon } alt={`Imagem do pokemon camado ${detailPokemon.name}`} />
     </section>
   );
 }

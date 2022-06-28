@@ -54,7 +54,7 @@ function DetailPokemon({ pokeName, showDetail, closeDetailChange }) {
                 <section className="close"><button className="close-detail" onClick={closeDetailChange}>close</button></section>
                 <section className="content-detail">
                     <section className={`image-side ${typeNamePokemon}`}>
-                        <img src={imagePokemon} alt="" />
+                        <img src={imagePokemon} alt={`Imagem do pokemon camado ${detailPokemon.name}`} />
                     </section>
                     <section className="detail-side">
                         <header>
