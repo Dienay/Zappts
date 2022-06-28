@@ -16,25 +16,28 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
     const [abilities, setAbilities] = useState([]);
     const [abilityTitle, setAbilityTitle] = useState("");
 
-    const getDetailPokemon = (pokeName) => {
-        axios
-            .get(`${baseUrl}${pokeName}`)
-            .then(response => {
-                setDetailPokemon(response.data);
-                setTypePokemon(response.data.types);
-                setImagePokemon(response.data.sprites.other.dream_world.front_default);
-                setTypeNamePokemon(response.data.types[0].type.name);
-                setAbilities(response.data.abilities);
-                setPokeId(response.data.id)
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    };
 
     useEffect(() => {
         if (pokeName) {
-            getDetailPokemon(pokeName);
+            axios
+                .get(`${baseUrl}${pokeName}`)
+                .then(response => {
+                    setDetailPokemon(response.data);
+                    setTypePokemon(response.data.types);
+                    setImagePokemon(response.data.sprites.other.dream_world.front_default);
+                    setTypeNamePokemon(response.data.types[0].type.name);
+                    setAbilities(response.data.abilities);
+                    setPokeId(response.data.id)
+                    setAttack(detailPokemon.stats[1].base_stat)
+                    setDefense(detailPokemon.stats[2].base_stat)
+                    setSpeed(detailPokemon.stats[5].base_stat)
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }
+
+    }, [pokeName, detailPokemon.stats])
         }
         // getDetailPokemon("bulbasaur");
     }, [pokeName])
