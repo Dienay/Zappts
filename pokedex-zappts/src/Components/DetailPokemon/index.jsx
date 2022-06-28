@@ -82,8 +82,8 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
                     </section>
                     <section className="detail-side">
                         <header>
-                            <h3>{detailPokemon.name}</h3>
-                            <p>#{pokeIdFormatted}</p>
+                            <h3 className="name">{detailPokemon.name}</h3>
+                            <p className="id">#{pokeIdFormatted}</p>
                         </header>
                         <ul className="types">
                             <h4>Types</h4>
