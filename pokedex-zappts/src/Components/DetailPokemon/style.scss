@@ -12,11 +12,11 @@ section.detail-pokemon {
     display: none;
 
     div.container {
-        .close {
+        &>.close {
             text-align: right;
             padding: 16px 0;
 
-            .close-detail {
+            &>.close-detail {
                 background-image: url('../../Images/icons/closeIcon.png');
                 background-color: rgba(#000, 1%);
                 cursor: pointer;
@@ -26,59 +26,93 @@ section.detail-pokemon {
             }
         }
 
-        .content-detail {
+        &>.content-detail {
             background-color: $white-color;
             box-shadow: 0 2px 8px rgba($black-color, 80%);
             display: flex;
             border-radius: 16px;
+            height: 400px;
+            width: 750px;
 
-            .image-side {
+            &>.image-side {
                 box-shadow: none;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                min-height: 350px;
-                min-width: 350px;
                 justify-content: center;
                 border-radius: 16px 0 0 16px;
+                height: 100%;
+                width: 50%;
 
-                img {
+                &>img {
                     height: 100%;
-                }
-
-                .types {
-                    align-items: flex-end;
-                    align-self: flex-end;
-                    display: flex;
-
-                    li {
-                        background-color: rgba($white-color, 90%);
-                        box-shadow: 0 2px 8px rgba($black-color, 50%);
-                        border-radius: 16px;
-                        padding: 6px 16px;
-                        margin-left: 16px;
-                        width: max-content;
-
-                        p {
-                            color: rgba($black-color, 90%);
-                            font-weight: $weight-semi-bold;
-                        }
-                    }
+                    width: 100%;
                 }
             }
 
-            .detail-side {
-                min-height: 350px;
-                min-width: 350px;
+            &>.detail-side {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 padding: 24px;
+                width: 50%;
+                height: 100%;
 
                 &>header {
+                    align-items: center;
                     display: flex;
                     justify-content: space-between;
-                    h3 {
+                    margin-bottom: 16px;
+
+                    &>h3.name {
+                        color: #444444;
                         text-transform: capitalize;
                         font-weight: $weight-semi-bold;
                         font-size: $h4;
+                    }
+
+                    &>p.id {
+                        color: #FB6C6C;
+                        font-size: $text-big;
+                    }
+                }
+
+                &>ul.list-detail {
+                    color: rgba($black-color, 80%);
+                    padding: 8px 16px;
+                    border-top: 1px solid rgba($black-color, 20%);
+
+                    &>li {
+                        display: inline-block;
+                        margin-left: 8px;
+                        margin-top: 8px;
+                    }
+                }
+
+                &>ul.list-detail:first-of-type {
+                    border-top: none;
+                }
+
+                &>ul.stats {
+                    &>li {
+                        align-items: center;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 8px;
+
+                        progress {
+                            height: 8px;
+                        }
+
+                        progress::-webkit-progress-bar {
+                            background: $white-color;
+                            border: 1px solid rgba($black-color, 30%);
+                            border-radius: 8px;
+                        }
+
+                        progress::-webkit-progress-value {
+                            background-color: $button-color;
+                        }
                     }
                 }
             }
