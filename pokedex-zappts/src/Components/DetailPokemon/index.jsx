@@ -85,10 +85,14 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
                             <h3 className="name">{detailPokemon.name}</h3>
                             <p className="id">#{pokeIdFormatted}</p>
                         </header>
-                        <ul className="types">
-                            <h4>Types</h4>
+                        <ul className="types list-detail">
+                            <h4>{typeTitle}</h4>
                             {typePokemon.map(types => {
-                                return <li key={types.type.name} ><p>{types.type.name}</p></li>;
+                                return (
+                                    <li key={types.type.name} >
+                                        <p>{types.type.name}</p>
+                                    </li>
+                                )
                             })}
                         </ul>
                         <ul>
