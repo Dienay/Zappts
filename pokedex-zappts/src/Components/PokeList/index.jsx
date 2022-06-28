@@ -33,12 +33,6 @@ function Pokelist() {
         setShowDetail('show')
     }
 
-    // Fecha card com detalhes do Pokemon
-    const closeDetailChange = () => {
-        setPokeName('')
-        setShowDetail('')
-    }
-
     // Carrega Lista de Pokemons
     useEffect(() => {
         axios
@@ -58,7 +52,6 @@ function Pokelist() {
             setCurrenPage(currentPage + 1)
         }
     }
-
 
     // Vai para a página anterior
     function gotoPrevPage() {
@@ -131,7 +124,8 @@ function Pokelist() {
             </ul>
             <DetailPokemon
                 showDetail={showDetail}
-                closeDetailChange={closeDetailChange}
+                setPokeName={setPokeName}
+                setShowDetail={setShowDetail}
                 pokeName={pokeName}
             />
             <section className="pagination">

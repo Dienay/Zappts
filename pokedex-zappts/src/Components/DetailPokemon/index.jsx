@@ -5,7 +5,7 @@ import './style.scss';
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
-function DetailPokemon({ pokeName, showDetail, closeDetailChange }) {
+function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
     const [detailPokemon, setDetailPokemon] = useState([]);
     const [typePokemon, setTypePokemon] = useState([]);
     const [typeNamePokemon, setTypeNamePokemon] = useState('');
@@ -47,6 +47,13 @@ function DetailPokemon({ pokeName, showDetail, closeDetailChange }) {
             setPokeIdFormatted(leftPad(pokeId))
         }
     }, [pokeId])
+
+    // Fecha card com detalhes do Pokemon
+    const closeDetailChange = () => {
+        setImagePokemon([])
+        setPokeName('')
+        setShowDetail('')
+    }
 
     return (
         <section className={`detail-pokemon ${showDetail}`}>
