@@ -8,11 +8,13 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
     const [detailPokemon, setDetailPokemon] = useState([]);
     const [typePokemon, setTypePokemon] = useState([]);
+    const [typeTitle, setTypeTitle] = useState("");
     const [typeNamePokemon, setTypeNamePokemon] = useState('');
     const [imagePokemon, setImagePokemon] = useState([]);
     const [pokeId, setPokeId] = useState();
     const [pokeIdFormatted, setPokeIdFormatted] = useState();
     const [abilities, setAbilities] = useState([]);
+    const [abilityTitle, setAbilityTitle] = useState("");
 
     const getDetailPokemon = (pokeName) => {
         axios
