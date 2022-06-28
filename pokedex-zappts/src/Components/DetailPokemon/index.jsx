@@ -95,8 +95,8 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
                                 )
                             })}
                         </ul>
-                        <ul>
-                            <h4>Abilities</h4>
+                        <ul className="abilities list-detail">
+                            <h4>{abilityTitle}</h4>
                             {abilities.map(ability => {
                                 return <li key={ability.ability.name} ><p>{ability.ability.name}</p></li>;
                             })}
