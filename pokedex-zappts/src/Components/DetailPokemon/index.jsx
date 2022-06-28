@@ -38,9 +38,21 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
         }
 
     }, [pokeName, detailPokemon.stats])
+
+    // Lida com títulos de tipo e abilidades
+    useEffect(() => {
+        if (typePokemon.length === 1) {
+            setTypeTitle("Tipo")
+        } else {
+            setTypeTitle("Tipos")
         }
-        // getDetailPokemon("bulbasaur");
-    }, [pokeName])
+
+        if (abilities.length === 1) {
+            setAbilityTitle("Abilidade")
+        } else {
+            setAbilityTitle("Abilidades")
+        }
+    }, [typePokemon, abilities])
 
     useEffect(() => {
         if (pokeId) {
