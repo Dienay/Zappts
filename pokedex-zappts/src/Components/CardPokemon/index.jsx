@@ -5,14 +5,19 @@ import './style.scss';
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-
 function CardPokemon({pokeName}) {
+  // Armazena detalhes do Pokemon
   const [detailPokemon, setDetailPokemon] = useState([]);
+
+  // Armazena os tipos do pokemon
   const [typePokemon, setTypePokemon] = useState([]);
   const [typeNamePokemon, setTypeNamePokemon] = useState("");
+
+  // Pega a imagem do Pokemon
   const [imagePokemon, setImagePokemon] = useState([]);
 
-  const getDetailPokemon = (pokeName) => {
+  // Carrega os estados
+  useEffect(() => {
     axios
       .get(`${baseUrl}${pokeName}`)
       .then(response => {
@@ -24,10 +29,6 @@ function CardPokemon({pokeName}) {
       .catch(err => {
         console.log(err);
       })
-  };
-
-  useEffect(() => {
-    getDetailPokemon(pokeName);
   },[pokeName])
 
   return (
