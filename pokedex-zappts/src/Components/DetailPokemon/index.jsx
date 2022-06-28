@@ -16,6 +16,9 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
     const [abilities, setAbilities] = useState([]);
     const [abilityTitle, setAbilityTitle] = useState("");
 
+    const [attack, setAttack] = useState();
+    const [defense, setDefense] = useState();
+    const [speed, setSpeed] = useState();
 
     useEffect(() => {
         if (pokeName) {
@@ -101,7 +104,22 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
                                 return <li key={ability.ability.name} ><p>{ability.ability.name}</p></li>;
                             })}
                         </ul>
-
+                        <ul className="stats list-detail">
+                            <h4>Características</h4>
+                            <li>Peso: {detailPokemon.weight} Kg</li>
+                            <li>
+                                <label for="attack-progress">Ataque: {attack}</label>
+                                <progress id="attack-progress" min="0" max="200" value={attack}>{attack}</progress>
+                            </li>
+                            <li>
+                                <label for="defense-progress">Defesa: {defense}</label>
+                                <progress id="defense-progress" max="250" value={defense}></progress>
+                            </li>
+                            <li>
+                                <label for="speed-progress">Velocidae: {speed}</label>
+                                <progress id="speed-progress" max="200" value={speed}></progress>
+                            </li>
+                        </ul>
                     </section>
                 </section>
             </div>
