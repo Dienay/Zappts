@@ -28,7 +28,7 @@ function CardPokemon({pokeName}) {
 
   useEffect(() => {
     getDetailPokemon(pokeName);
-  },[])
+  },[pokeName])
 
   return (
     <section className={`card-pokemon ${ typeNamePokemon }`}>
