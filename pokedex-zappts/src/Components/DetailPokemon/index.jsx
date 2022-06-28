@@ -6,20 +6,31 @@ import './style.scss';
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
+    // Armazena detalhes do Pokemon
     const [detailPokemon, setDetailPokemon] = useState([]);
+
+  // Armazena os tipos do pokemon
     const [typePokemon, setTypePokemon] = useState([]);
     const [typeTitle, setTypeTitle] = useState("");
     const [typeNamePokemon, setTypeNamePokemon] = useState('');
+
+  // Pega a imagem do Pokemon
     const [imagePokemon, setImagePokemon] = useState([]);
+
+  // Pega o id do Pokemon
     const [pokeId, setPokeId] = useState();
     const [pokeIdFormatted, setPokeIdFormatted] = useState();
+
+  // Pega as abilidades do Pokemon
     const [abilities, setAbilities] = useState([]);
     const [abilityTitle, setAbilityTitle] = useState("");
 
+    // Pega as características do Pokemon
     const [attack, setAttack] = useState();
     const [defense, setDefense] = useState();
     const [speed, setSpeed] = useState();
 
+    // Carrega os estados
     useEffect(() => {
         if (pokeName) {
             axios
@@ -57,6 +68,7 @@ function DetailPokemon({ pokeName, showDetail, setPokeName, setShowDetail }) {
         }
     }, [typePokemon, abilities])
 
+    // Formata o id para ter sempre 3 caracteres no mínimo e acrescenta "#" ao início
     useEffect(() => {
         if (pokeId) {
             const leftPad = (id) => {
