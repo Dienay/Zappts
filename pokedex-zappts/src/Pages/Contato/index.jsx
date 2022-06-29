@@ -7,7 +7,7 @@ function Contato() {
   return (
     <section className="contato">
       <Header />
-      <div>Contato</div>
+      <div>Contato dos Pokemons</div>
     </section>
   );
 }
